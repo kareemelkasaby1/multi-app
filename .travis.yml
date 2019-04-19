@@ -2,7 +2,7 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker build -t kareemelkasaby/multi-app -f ./client/Dockerfile.dev .
+  - docker build -t kareemelkasaby/multi-app -f ./client/Dockerfile.dev ./client
 script:
   - docker run kareemelkasaby/multi-app npm run test -- --coverage
 after_success:
