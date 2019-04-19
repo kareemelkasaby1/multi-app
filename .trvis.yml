@@ -12,6 +12,6 @@ after_success:
   - docker build -t kareemelkasaby/multi-worker ./worker
   - echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
   - docker push kareemelkasaby/multi-nginx 
-  - docker pushkareemelkasaby/multi-client
-  - docker pushkareemelkasaby/multi-server
-  - docker pushkareemelkasaby/multi-worker
+  - docker push kareemelkasaby/multi-client
+  - docker push kareemelkasaby/multi-server
+  - docker push kareemelkasaby/multi-worker
