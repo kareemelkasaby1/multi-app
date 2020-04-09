@@ -2,6 +2,9 @@ version: '3'
 services:
   postgressql:
     image: 'postgres:latest'
+    volumes:
+      - /app/node_modules
+      - ./client:/app
   redis:
     image: 'redis:latest'
   nginx:
@@ -10,7 +13,7 @@ services:
       context: ./nginx
       dockerfile: Dockerfile.dev
     ports:
-      - '4500:80'
+      - '3306:80'
   api:
     build:
       context: ./server
